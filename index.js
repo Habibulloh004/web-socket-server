@@ -11,10 +11,10 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://localhost:3000",
-      "https://my-web-socket-steel.vercel.app",
+      // "https://my-web-socket-steel.vercel.app",
     ], // Add all the origins you want to allow
     methods: ["GET", "POST"],
-    withCredentials: true, // if your frontend sends cookies or any credentials, set this to true
+    credentials: true, // if your frontend sends cookies or any credentials, set this to true
   },
 });
 
