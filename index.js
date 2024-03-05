@@ -14,7 +14,7 @@ const io = new Server(server, {
       "https://my-web-socket-steel.vercel.app",
     ], // Add all the origins you want to allow
     methods: ["GET", "POST"],
-    credentials: true, // if your frontend sends cookies or any credentials, set this to true
+    withCredentials: true, // if your frontend sends cookies or any credentials, set this to true
   },
 });
 
