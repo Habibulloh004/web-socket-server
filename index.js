@@ -19,13 +19,13 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`user id: ${socket.id}`);
+  console.log("user id:" + socket.id);
 
   socket.on("send_message", (data) => {
     // socket.to(data.room).emit("recieve_message", data);
     socket.broadcast.emit("recieve_message", data);
   });
-  socket.emit("userData", socket);
+  // socket.broadcast.emit("userData", socket);
   // socket.to(data.room).emit("user_id", socket.id);
 });
 
