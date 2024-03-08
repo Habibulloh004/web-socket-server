@@ -22,9 +22,11 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("user id:" + socket.id);
 
+  socket.on("join_room", (data) => socket.join(data));
   socket.on("send_message", (data) => {
-    // socket.to(data.room).emit("recieve_message", data);
-    socket.broadcast.emit("recieve_message", data);
+    socket.to(data.room).emit("recieve_message", data);
+    // socket.broadcast.emit("recieve_message", data);
+    console.log(data);
   });
   // socket.broadcast.emit("userData", socket);
   // socket.to(data.room).emit("user_id", socket.id);
