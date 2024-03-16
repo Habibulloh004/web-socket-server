@@ -16,6 +16,8 @@ const io = new Server(server, {
       // "https://localhost:3000",
       "http://joinposter.com",
       "https://my-web-socket-steel.vercel.app",
+      "https://joinposter.com",
+      "https://platform.joinposter.com",
     ], // Add all the origins you want to allow
     methods: ["GET", "POST"],
     credentials: true, // if your frontend sends cookies or any credentials, set this to true
@@ -27,7 +29,7 @@ io.on("connection", (socket) => {
 
   const userURL = socket.handshake.headers.referer;
   console.log("User URL:", userURL);
-  
+
   socket.on("join_room", (data) => socket.join(data));
   socket.on("send_message", (data) => {
     // socket.to(data.room).emit("recieve_message", data);
