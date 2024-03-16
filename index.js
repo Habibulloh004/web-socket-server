@@ -25,6 +25,9 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("user id:" + socket.id);
 
+  const userURL = socket.handshake.headers.referer;
+  console.log("User URL:", userURL);
+  
   socket.on("join_room", (data) => socket.join(data));
   socket.on("send_message", (data) => {
     // socket.to(data.room).emit("recieve_message", data);
