@@ -15,7 +15,7 @@ const io = new Server(server, {
       // "http://localhost:3000",
       // "https://localhost:3000",
       "http://joinposter.com",
-      "https://my-web-socket-steel.vercel.app",
+      "https://morella-ice.vercel.app/",
       "https://joinposter.com",
       "https://platform.joinposter.com",
     ], // Add all the origins you want to allow
