@@ -30,8 +30,8 @@ io.on("connection", (socket) => {
 
   const userURL = socket.handshake.headers.referer;
   console.log("User URL:", userURL);
-  
-  socket.on("join_room", (data) => socket.join(data));
+
+  socket.on("join_room", (data) => socket.join(JSON.parse(data)));
   socket.on("send_message", (data) => {
     const uData = JSON.parse(data);
     socket.to(uData.user).emit("recieve_message", uData);
