@@ -14,6 +14,7 @@ const io = new Server(server, {
       // "http://localhost:3002",
       // "http://localhost:3000",
       // "https://localhost:3000",
+      "http://joinposter.com",
       "https://my-web-socket-steel.vercel.app",
     ], // Add all the origins you want to allow
     methods: ["GET", "POST"],
