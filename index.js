@@ -15,9 +15,7 @@ const io = new Server(server, {
       "http://localhost:3000",
       "http://localhost:3001",
       "https://localhost:3000",
-      "http://joinposter.com",
       "https://morella-ice.vercel.app/",
-      "https://joinposter.com",
       "https://platform.joinposter.com",
     ], // Add all the origins you want to allow
     methods: ["GET", "POST"],
