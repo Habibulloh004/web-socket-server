@@ -34,12 +34,12 @@ io.on("connection", (socket) => {
     const uData = JSON.parse(data);
     socket.to(uData.user).emit("recieve_message", uData);
     console.log(uData);
-    socket.on("music_message", (data) => {
-      const uData = JSON.parse(data);
-      socket.to(uData.user).emit("music_recieve_message", uData);
-      // socket.broadcast.emit("recieve_message", uData);
-      console.log(uData);
-    });
+  });
+  socket.on("music_message", (data) => {
+    const uData = JSON.parse(data);
+    socket.to(uData.user).emit("music_recieve_message", uData);
+    // socket.broadcast.emit("recieve_message", uData);
+    console.log(uData);
   });
 });
 
